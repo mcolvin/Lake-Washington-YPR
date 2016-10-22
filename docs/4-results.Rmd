@@ -1,0 +1,50 @@
+---
+title: "Results"
+---
+
+# Results
+
+## Data Collection
+During our sampling period we collected a total of 589 individual fish from 16 different species.
+Fish other than Black or White Crappie were measured for length and returned to the lake.
+A total of 478 crappie were captured, 360 Black Crappie and 118 White Crappie.
+In order to have fish for aging and weights, 5 crappie from a 5 centimeter bin were kept.
+A total of 154 Black Crappie and 62 White Crappie were kept for a total of 216.
+Table XX shows the minimum, maximum, and mean for lengths, weights, and ages for the 216 crappie that were kept. 
+
+The minimum length of a crappie that we recorded was 100 mm and the maximum length recorded was 364 mm.
+The range of lengths recorded for Black Crappie was 105 mm – 359 mm with an average of 242.55 mm.
+White Crappie ranged in length from 100 mm – 364 mm and averaged 227.19 mm.
+The majority of small fish (around 100 mm) were White Crappie.
+
+
+
+## Length-weight and age-length Relationship
+
+The lengths and weights that were recorded from the kept crappie was entered into excel and the used to form a
+ length-weight relationship.
+Once the date was entered the log10 and regression function of excel was used to find the intercept (a), 5.8E-07,
+ and slope (b), 3.615.
+
+Once the fish were aged and the data was entered into excel a von Bertalanffy growth function was fit to the data.
+The solver function of Microsoft Excel was to fit the growth function to the data.
+Length at infinity is 343.97 mm, k is 0.395, and t0 is -1.026.
+By understanding at what age most fish reach 254 mm we can assess growth overfishing.
+Most of the Black Crappie reached 254 mm by age 2, while most of the White Crappie seemed to reach the current MLL at ages 1-4.  
+
+
+## Yield per Recruit analysis
+
+### Growth overfishing
+
+Once the required information: length-weight relationship, the VBGF, and annual exploitation were calculated we were able to
+ simulate 5 different Yield per Recruit models, each assessing a different conditional fishing mortality below the MLL and the
+ three options for the proposed length limit; 254, 279.4, 304.8 mm.
+We also assessed the fishery for the potential for growth overfishing, by looking for decline in yield with increased effort.
+For each scenario, the current MLL of 254 mm had the greatest yield at the 41% exploitation rate. Yield decrease in every
+ scenario with an increased MLL.
+As the conditional fishing mortality below the MLL increases we see a shift to the right on the exploitation axis was the
+ 254 mm length limit yield exceeds the 279.4 and 3014.8 mm length limit yield.
+However, for each scenario this point occurs under the 41% exploitation line that this fishery experiences.
+
+### Recruit overfishing
