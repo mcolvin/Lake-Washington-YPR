@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xmile version="1.0" level="3" xmlns="http://www.systemdynamics.org/XMILE" xmlns:isee="http://iseesystems.com/XMILE">
+    <header>
+        <smile version="1.0" />
+        <name>nonconstantF_verify</name>
+        <uuid>3c95ca3e-e2ac-4874-8c11-a02083beaeb7</uuid>
+        <vendor>isee systems</vendor>
+        <product version="10.0.2" lang="en">iThink</product>
+    </header>
+    <sim_specs time_units="Years">
+        <start>0</start>
+        <stop>13</stop>
+        <dt reciprocal="true">0.03125</dt>
+        <method>RK4</method>
+    </sim_specs>
+    <model_units />
+    <isee:prefs layer="model" grid_width="20" grid_height="50" divide_by_zero_alert="true" hide_taskbar="true" show_module_prefix="true">
+        <isee:window width="1680" height="968" />
+        <isee:security />
+        <isee:print_setup width="588" height="768" orientation="portrait" />
+    </isee:prefs>
+    <isee:equation_prefs order_by="module" />
+    <model>
+        <stock name="N1">
+            <eqn>1000</eqn>
+            <outflow>Noname_3</outflow>
+            <non_negative />
+            <display x="344" y="182" color="blue" />
+        </stock>
+        <stock name="N2">
+            <eqn>1000</eqn>
+            <outflow>Noname_4</outflow>
+            <non_negative />
+            <display x="353" y="487" color="blue" />
+        </stock>
+        <flow name="Noname_3">
+            <eqn>N_Harvested_1+N_Die_1</eqn>
+            <non_negative />
+            <display x="450" y="184" color="blue">
+                <pts>
+                    <pt x="366" y="184" />
+                    <pt x="534" y="184" />
+                </pts>
+            </display>
+        </flow>
+        <flow name="Noname_4">
+            <eqn>N_Harvested_2+N_Die_2</eqn>
+            <non_negative />
+            <display x="482" y="487" color="blue">
+                <pts>
+                    <pt x="375" y="487" />
+                    <pt x="589" y="487" />
+                </pts>
+            </display>
+        </flow>
+        <aux name="F1">
+            <eqn>TIME</eqn>
+            <gf discrete="false">
+                <xpts>0,0.10000000000000001,0.20000000000000001,0.30000000000000004,0.40000000000000002,0.5,0.60000000000000009,0.70000000000000007,0.80000000000000004,0.90000000000000002,1,1.1000000000000001,1.2000000000000002,1.3,1.4000000000000001,1.5,1.6000000000000001,1.7000000000000002,1.8,1.9000000000000001,2,2.1000000000000001,2.2000000000000002,2.3000000000000003,2.4000000000000004,2.5,2.6000000000000001,2.7000000000000002,2.8000000000000003,2.9000000000000004,3,3.1000000000000001,3.2000000000000002,3.3000000000000003,3.4000000000000004,3.5,3.6000000000000001,3.7000000000000002,3.8000000000000003,3.9000000000000004,4,4.1000000000000005,4.2000000000000002,4.2999999999999998,4.4000000000000004,4.5,4.6000000000000005,4.7000000000000002,4.8000000000000007,4.9000000000000004,5,5.1000000000000005,5.2000000000000002,5.3000000000000007,5.4000000000000004,5.5,5.6000000000000005,5.7000000000000002,5.8000000000000007,5.9000000000000004,6,6.1000000000000005,6.2000000000000002,6.3000000000000007,6.4000000000000004,6.5,6.6000000000000005,6.7000000000000002,6.8000000000000007,6.9000000000000004,7,7.1000000000000005,7.2000000000000002,7.3000000000000007,7.4000000000000004,7.5,7.6000000000000005,7.7000000000000002,7.8000000000000007,7.9000000000000004,8,8.0999999999999996,8.2000000000000011,8.3000000000000007,8.4000000000000004,8.5,8.5999999999999996,8.7000000000000011,8.8000000000000007,8.9000000000000004,9,9.0999999999999996,9.2000000000000011,9.3000000000000007,9.4000000000000004,9.5,9.6000000000000014,9.7000000000000011,9.8000000000000007,9.9000000000000004,10,10.100000000000001,10.200000000000001,10.300000000000001,10.4,10.5,10.600000000000001,10.700000000000001,10.800000000000001,10.9,11,11.100000000000001,11.200000000000001,11.300000000000001,11.4,11.5,11.600000000000001,11.700000000000001,11.800000000000001,11.9,12,12.100000000000001,12.200000000000001,12.300000000000001,12.4,12.5,12.600000000000001,12.700000000000001,12.800000000000001,12.9,13</xpts>
+                <ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001,0.20000000000000001</ypts>
+                <xscale min="0" max="13" />
+                <yscale min="0" max="100" />
+            </gf>
+            <display x="444" y="71" color="blue" />
+        </aux>
+        <aux name="F2">
+            <eqn>TIME</eqn>
+            <gf discrete="true">
+                <xpts>0,0.10000000000000001,0.20000000000000001,0.30000000000000004,0.40000000000000002,0.5,0.60000000000000009,0.70000000000000007,0.80000000000000004,0.90000000000000002,1,1.1000000000000001,1.2000000000000002,1.3,1.4000000000000001,1.5,1.6000000000000001,1.7000000000000002,1.8,1.9000000000000001,2,2.1000000000000001,2.2000000000000002,2.3000000000000003,2.4000000000000004,2.5,2.6000000000000001,2.7000000000000002,2.8000000000000003,2.9000000000000004,3,3.1000000000000001,3.2000000000000002,3.3000000000000003,3.4000000000000004,3.5,3.6000000000000001,3.7000000000000002,3.8000000000000003,3.9000000000000004,4,4.1000000000000005,4.2000000000000002,4.2999999999999998,4.4000000000000004,4.5,4.6000000000000005,4.7000000000000002,4.8000000000000007,4.9000000000000004,5,5.1000000000000005,5.2000000000000002,5.3000000000000007,5.4000000000000004,5.5,5.6000000000000005,5.7000000000000002,5.8000000000000007,5.9000000000000004,6,6.1000000000000005,6.2000000000000002,6.3000000000000007,6.4000000000000004,6.5,6.6000000000000005,6.7000000000000002,6.8000000000000007,6.9000000000000004,7,7.1000000000000005,7.2000000000000002,7.3000000000000007,7.4000000000000004,7.5,7.6000000000000005,7.7000000000000002,7.8000000000000007,7.9000000000000004,8,8.0999999999999996,8.2000000000000011,8.3000000000000007,8.4000000000000004,8.5,8.5999999999999996,8.7000000000000011,8.8000000000000007,8.9000000000000004,9,9.0999999999999996,9.2000000000000011,9.3000000000000007,9.4000000000000004,9.5,9.6000000000000014,9.7000000000000011,9.8000000000000007,9.9000000000000004,10,10.100000000000001,10.200000000000001,10.300000000000001,10.4,10.5,10.600000000000001,10.700000000000001,10.800000000000001,10.9,11,11.100000000000001,11.200000000000001,11.300000000000001,11.4,11.5,11.600000000000001,11.700000000000001,11.800000000000001,11.9,12,12.100000000000001,12.200000000000001,12.300000000000001,12.4,12.5,12.600000000000001,12.700000000000001,12.800000000000001,12.9,13</xpts>
+                <ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0,0,0,0,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0,0,0,0,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0,0,0,0,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0,0,0,0,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0,0,0,0,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0,0,0,0,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0.36111110000000002,0,0</ypts>
+                <xscale min="0" max="13" />
+                <yscale min="0" max="1" />
+            </gf>
+            <display x="528" y="316" color="blue" />
+        </aux>
+        <stock name="N3">
+            <eqn>1000</eqn>
+            <outflow>Noname_5</outflow>
+            <non_negative />
+            <display x="347" y="691" color="blue" />
+        </stock>
+        <flow name="Noname_5">
+            <eqn>N_Harvested_3+N_Die_3</eqn>
+            <non_negative />
+            <display x="479" y="685" color="blue">
+                <pts>
+                    <pt x="369" y="685" />
+                    <pt x="589" y="685" />
+                </pts>
+            </display>
+        </flow>
+        <aux name="F3">
+            <eqn>TIME</eqn>
+            <gf discrete="true">
+                <xpts>0,0.10000000000000001,0.20000000000000001,0.30000000000000004,0.40000000000000002,0.5,0.60000000000000009,0.70000000000000007,0.80000000000000004,0.90000000000000002,1,1.1000000000000001,1.2000000000000002,1.3,1.4000000000000001,1.5,1.6000000000000001,1.7000000000000002,1.8,1.9000000000000001,2,2.1000000000000001,2.2000000000000002,2.3000000000000003,2.4000000000000004,2.5,2.6000000000000001,2.7000000000000002,2.8000000000000003,2.9000000000000004,3,3.1000000000000001,3.2000000000000002,3.3000000000000003,3.4000000000000004,3.5,3.6000000000000001,3.7000000000000002,3.8000000000000003,3.9000000000000004,4,4.1000000000000005,4.2000000000000002,4.2999999999999998,4.4000000000000004,4.5,4.6000000000000005,4.7000000000000002,4.8000000000000007,4.9000000000000004,5,5.1000000000000005,5.2000000000000002,5.3000000000000007,5.4000000000000004,5.5,5.6000000000000005,5.7000000000000002,5.8000000000000007,5.9000000000000004,6,6.1000000000000005,6.2000000000000002,6.3000000000000007,6.4000000000000004,6.5,6.6000000000000005,6.7000000000000002,6.8000000000000007,6.9000000000000004,7,7.1000000000000005,7.2000000000000002,7.3000000000000007,7.4000000000000004,7.5,7.6000000000000005,7.7000000000000002,7.8000000000000007,7.9000000000000004,8,8.0999999999999996,8.2000000000000011,8.3000000000000007,8.4000000000000004,8.5,8.5999999999999996,8.7000000000000011,8.8000000000000007,8.9000000000000004,9,9.0999999999999996,9.2000000000000011,9.3000000000000007,9.4000000000000004,9.5,9.6000000000000014,9.7000000000000011,9.8000000000000007,9.9000000000000004,10,10.100000000000001,10.200000000000001,10.300000000000001,10.4,10.5,10.600000000000001,10.700000000000001,10.800000000000001,10.9,11,11.100000000000001,11.200000000000001,11.300000000000001,11.4,11.5,11.600000000000001,11.700000000000001,11.800000000000001,11.9,12,12.100000000000001,12.200000000000001,12.300000000000001,12.4,12.5,12.600000000000001,12.700000000000001,12.800000000000001,12.9,13</xpts>
+                <ypts>0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.66666669999999995,0.66666669999999995,0.66666669999999995,0,0,0,0,0,0,0,0.66666669999999995,0.66666669999999995,0.66666669999999995,0,0,0,0,0,0,0,0.66666669999999995,0.66666669999999995,0.66666669999999995,0,0,0,0,0,0,0,0.66666669999999995,0.66666669999999995,0.66666669999999995,0,0,0,0,0,0,0,0.66666669999999995,0.66666669999999995,0.66666669999999995,0,0,0,0,0,0,0,0.66666669999999995,0.66666669999999995,0.66666669999999995,0,0,0,0,0,0,0,0.66666669999999995,0.66666669999999995,0.66666669999999995,0,0,0,0,0</ypts>
+                <xscale min="0" max="13" />
+                <yscale min="0" max="1" />
+            </gf>
+            <display x="519" y="606" color="blue" />
+        </aux>
+        <stock name="Yield_1">
+            <eqn>0</eqn>
+            <inflow>harvest_1</inflow>
+            <non_negative />
+            <display x="1077" y="169" color="blue" />
+        </stock>
+        <flow name="harvest_1">
+            <eqn>N_Harvested_1*wt</eqn>
+            <non_negative />
+            <display x="975" y="175" color="blue">
+                <pts>
+                    <pt x="896" y="175" />
+                    <pt x="1055" y="175" />
+                </pts>
+            </display>
+        </flow>
+        <stock name="Yield_2">
+            <eqn>0</eqn>
+            <inflow>harvest_2</inflow>
+            <non_negative />
+            <display x="1055" y="376" color="blue" />
+        </stock>
+        <flow name="harvest_2">
+            <eqn>wt*N_Harvested_2</eqn>
+            <non_negative />
+            <display x="953" y="382" color="blue">
+                <pts>
+                    <pt x="874" y="382" />
+                    <pt x="1033" y="382" />
+                </pts>
+            </display>
+        </flow>
+        <stock name="Yield_3">
+            <eqn>0</eqn>
+            <inflow>harvest_3</inflow>
+            <non_negative />
+            <display x="1106" y="531" color="blue" />
+        </stock>
+        <flow name="harvest_3">
+            <eqn>wt*N_Harvested_3</eqn>
+            <non_negative />
+            <display x="1004" y="537" color="blue">
+                <pts>
+                    <pt x="925" y="537" />
+                    <pt x="1084" y="537" />
+                </pts>
+            </display>
+        </flow>
+        <aux name="a">
+            <eqn>10^-5.102</eqn>
+            <display x="63" y="348" color="blue" />
+        </aux>
+        <aux name="b">
+            <eqn>3.1</eqn>
+            <display x="62" y="303" color="blue" />
+        </aux>
+        <aux name="wt">
+            <eqn> a*(Linf*(1 - exp(-k * (age-t0))))^b</eqn>
+            <display x="237" y="316" color="blue" />
+        </aux>
+        <aux name="k">
+            <eqn>0.35</eqn>
+            <display x="120" y="100" color="blue" />
+        </aux>
+        <aux name="Linf">
+            <eqn>351</eqn>
+            <display x="80" y="146" color="blue" />
+        </aux>
+        <aux name="t0">
+            <eqn>0</eqn>
+            <display x="59" y="240" color="blue" />
+        </aux>
+        <aux name="age">
+            <eqn>TIME</eqn>
+            <display x="235" y="183" color="blue" />
+        </aux>
+        <aux name="N_Harvested_1">
+            <eqn>0.2*N1+F1*0</eqn>
+            <display x="564" y="117" color="blue" />
+        </aux>
+        <aux name="N_Harvested_2">
+            <eqn>F2*N2</eqn>
+            <display x="612" y="375" color="blue" />
+        </aux>
+        <aux name="N_Harvested_3">
+            <eqn>F3*N3</eqn>
+            <display x="608" y="610" color="blue" />
+        </aux>
+        <aux name="N_Die_1">
+            <eqn>M*N1</eqn>
+            <display x="448" y="247" color="blue" />
+        </aux>
+        <aux name="N_Die_2">
+            <eqn>N2*M</eqn>
+            <display x="441" y="535" color="blue" />
+        </aux>
+        <aux name="N_Die_3">
+            <eqn>N3*M</eqn>
+            <display x="528" y="771" color="blue" />
+        </aux>
+        <aux name="M">
+            <eqn>0.2</eqn>
+            <display x="275" y="37" color="blue" />
+        </aux>
+        <display show_pages="false" page_width="588" page_height="768" page_sequence="row" page_rows="2" page_cols="2" isee:show_values_on_hover="true" isee:converter_size="medium" zoom="100" isee:animate_flows="true" isee:animate_stocks="true" isee:animate_converters="true" report_every_dt="true" scroll_x="0" scroll_y="0">
+            <connector x="557" y="122" uid="0" color="#FF007F">
+                <from>N_Harvested_1</from>
+                <to>Noname_3</to>
+            </connector>
+            <connector x="605" y="380" uid="1" color="#FF007F">
+                <from>N_Harvested_2</from>
+                <to>Noname_4</to>
+            </connector>
+            <connector x="600" y="615" uid="2" color="#FF007F">
+                <from>N_Harvested_3</from>
+                <to>Noname_5</to>
+            </connector>
+            <connector x="365" y="674" uid="3" color="#FF007F">
+                <from>N3</from>
+                <to>N_Harvested_3</to>
+            </connector>
+            <connector x="528" y="606" uid="4" color="#FF007F">
+                <from>F3</from>
+                <to>N_Harvested_3</to>
+            </connector>
+            <connector x="528" y="325" uid="5" color="#FF007F">
+                <from>F2</from>
+                <to>N_Harvested_2</to>
+            </connector>
+            <connector x="123" y="109" uid="6" color="#FF007F">
+                <from>k</from>
+                <to>wt</to>
+            </connector>
+            <connector x="66" y="245" uid="7" color="#FF007F">
+                <from>t0</from>
+                <to>wt</to>
+            </connector>
+            <connector x="70" y="309" uid="8" color="#FF007F">
+                <from>b</from>
+                <to>wt</to>
+            </connector>
+            <connector x="72" y="347" uid="9" color="#FF007F">
+                <from>a</from>
+                <to>wt</to>
+            </connector>
+            <connector x="86" y="153" uid="10" color="#FF007F">
+                <from>Linf</from>
+                <to>wt</to>
+            </connector>
+            <connector x="238" y="191" uid="11" color="#FF007F">
+                <from>age</from>
+                <to>wt</to>
+            </connector>
+            <connector x="375" y="470" uid="12" color="#FF007F">
+                <from>N2</from>
+                <to>N_Harvested_2</to>
+            </connector>
+            <connector x="368" y="167" uid="13" color="#FF007F">
+                <from>N1</from>
+                <to>N_Harvested_1</to>
+            </connector>
+            <connector x="452" y="77" uid="14" color="#FF007F">
+                <from>F1</from>
+                <to>N_Harvested_1</to>
+            </connector>
+            <alias x="771" y="83" uid="15">
+                <of>wt</of>
+            </alias>
+            <alias x="780" y="308" uid="16">
+                <of>wt</of>
+            </alias>
+            <alias x="864" y="474" uid="17">
+                <of>wt</of>
+            </alias>
+            <alias x="373" y="312" uid="18">
+                <of>M</of>
+            </alias>
+            <alias x="362" y="580" uid="19">
+                <of>M</of>
+            </alias>
+            <alias x="418" y="799" uid="20">
+                <of>M</of>
+            </alias>
+            <connector x="358" y="709" uid="21" color="#FF007F">
+                <from>N3</from>
+                <to>N_Die_3</to>
+            </connector>
+            <connector x="426" y="802" uid="22" color="#FF007F">
+                <from>
+                    <alias uid="20" />
+                </from>
+                <to>N_Die_3</to>
+            </connector>
+            <connector x="523" y="764" uid="23" color="#FF007F">
+                <from>N_Die_3</from>
+                <to>Noname_5</to>
+            </connector>
+            <connector x="371" y="580" uid="24" color="#FF007F">
+                <from>
+                    <alias uid="19" />
+                </from>
+                <to>N_Die_2</to>
+            </connector>
+            <connector x="375" y="501" uid="25" color="#FF007F">
+                <from>N2</from>
+                <to>N_Die_2</to>
+            </connector>
+            <connector x="450" y="533" uid="26" color="#FF007F">
+                <from>N_Die_2</from>
+                <to>Noname_4</to>
+            </connector>
+            <connector x="381" y="308" uid="27" color="#FF007F">
+                <from>
+                    <alias uid="18" />
+                </from>
+                <to>N_Die_1</to>
+            </connector>
+            <connector x="366" y="199" uid="28" color="#FF007F">
+                <from>N1</from>
+                <to>N_Die_1</to>
+            </connector>
+            <connector x="447" y="238" uid="29" color="#FF007F">
+                <from>N_Die_1</from>
+                <to>Noname_3</to>
+            </connector>
+            <connector x="572" y="112" uid="30" color="#FF007F">
+                <from>N_Harvested_1</from>
+                <to>harvest_1</to>
+            </connector>
+            <connector x="779" y="87" uid="31" color="#FF007F">
+                <from>
+                    <alias uid="15" />
+                </from>
+                <to>harvest_1</to>
+            </connector>
+            <connector x="789" y="308" uid="32" color="#FF007F">
+                <from>
+                    <alias uid="16" />
+                </from>
+                <to>harvest_2</to>
+            </connector>
+            <connector x="620" y="379" uid="33" color="#FF007F">
+                <from>N_Harvested_2</from>
+                <to>harvest_2</to>
+            </connector>
+            <connector x="873" y="476" uid="34" color="#FF007F">
+                <from>
+                    <alias uid="17" />
+                </from>
+                <to>harvest_3</to>
+            </connector>
+            <connector x="615" y="613" uid="35" color="#FF007F">
+                <from>N_Harvested_3</from>
+                <to>harvest_3</to>
+            </connector>
+            <popup x="1789" y="112">
+                <stacked_container visible="false" height="637" width="1081" visible_index="0" uid="pad_157214612">
+                    <graph type="time_series" title="Untitled" background="#FFFFC9" show_grid="false" numbers_on_plots="true" isee:use_five_segments="false" isee:date_time="-780417152" time_precision="2" from="0" to="13">
+                        <plot pen_width="1" precision="0">
+                            <index>0</index>
+                            <color>blue</color>
+                            <show_y_axis>true</show_y_axis>
+                            <entity name="N1" />
+                        </plot>
+                        <plot pen_width="1" precision="0">
+                            <index>1</index>
+                            <color>red</color>
+                            <show_y_axis>true</show_y_axis>
+                            <entity name="N2" />
+                        </plot>
+                        <plot pen_width="1" precision="0">
+                            <index>2</index>
+                            <color>fuchsia</color>
+                            <show_y_axis>true</show_y_axis>
+                            <entity name="N3" />
+                        </plot>
+                    </graph>
+                    <graph type="time_series" title="Untitled" background="#FFFFC9" show_grid="false" numbers_on_plots="true" isee:use_five_segments="false" isee:date_time="-780417152" time_precision="2" from="0" to="13">
+                        <plot pen_width="1" precision="0">
+                            <index>0</index>
+                            <color>blue</color>
+                            <show_y_axis>true</show_y_axis>
+                            <entity name="Yield_1" />
+                        </plot>
+                        <plot pen_width="1" precision="0">
+                            <index>1</index>
+                            <color>red</color>
+                            <show_y_axis>true</show_y_axis>
+                            <entity name="Yield_2" />
+                        </plot>
+                        <plot pen_width="1" precision="0">
+                            <index>2</index>
+                            <color>fuchsia</color>
+                            <show_y_axis>true</show_y_axis>
+                            <entity name="Yield_3" />
+                        </plot>
+                    </graph>
+                </stacked_container>
+            </popup>
+            <pad_icon x="830" y="817" width="26" height="22" color="#008F44" label="Graph 1" type="graph" icon_of="pad_157214612">
+                <label_side>bottom</label_side>
+            </pad_icon>
+            <popup x="2380" y="705">
+                <stacked_container visible="false" height="270" width="475" visible_index="0" uid="pad_85073000">
+                    <table title="Untitled Table" font-size="9" background="#E0E0E0" columns_width="63" orientation="vertical" report_every_dt="true" isee:periods="417" report_from="0" report_to="13" isee:date_time="-780417152">
+                        <item type="time" color="black" text-align="left" precision="3" width="100" />
+                        <item color="black" text-align="left" precision="2" thousands_separator="true">
+                            <entity name="Yield_1" />
+                            <index>0</index>
+                        </item>
+                        <item color="black" text-align="left" precision="2" thousands_separator="true">
+                            <entity name="Yield_2" />
+                            <index>1</index>
+                        </item>
+                        <item color="black" text-align="left" precision="2" thousands_separator="true">
+                            <entity name="Yield_3" />
+                            <index>2</index>
+                        </item>
+                    </table>
+                </stacked_container>
+            </popup>
+            <pad_icon x="754" y="732" width="26" height="22" color="#008F44" label="Table 1" type="table" icon_of="pad_85073000">
+                <label_side>bottom</label_side>
+            </pad_icon>
+            <popup x="2640" y="751">
+                <stacked_container visible="false" height="270" width="475" visible_index="0" uid="pad_87975660">
+                    <table title="Untitled Table" font-size="9" background="#E0E0E0" columns_width="59" orientation="vertical" report_every_dt="true" isee:periods="0" report_from="0" report_to="13" isee:date_time="-780418107">
+                        <item type="time" color="black" text-align="left" precision="3" width="100" />
+                    </table>
+                </stacked_container>
+            </popup>
+            <pad_icon x="957" y="702" width="26" height="22" color="#008F44" label="Table 2" type="table" icon_of="pad_87975660">
+                <label_side>bottom</label_side>
+            </pad_icon>
+        </display>
+        <interface scroll_x="0" scroll_y="0" zoom="100">
+            <simulation_delay>0.1</simulation_delay>
+            <pages show="false" row_count="1" column_count="1" home_page="1" width="788" height="528" />
+        </interface>
+    </model>
+</xmile>

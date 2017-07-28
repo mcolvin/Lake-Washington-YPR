@@ -1,0 +1,194 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Item xmlns:i="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.datacontract.org/2004/07/LeicaMicrosystems.DataEntities.V3_2">
+  <Id>633559d2-0d5a-42fd-bb2f-a88a98a4c021</Id>
+  <ParentId>bd1f0565-0e3d-4b11-af93-cb6dfd7d58a7</ParentId>
+  <LinkedItemId i:nil="true" />
+  <Type>Collection</Type>
+  <SubType>Image</SubType>
+  <Index i:nil="true" />
+  <Name>30.tif</Name>
+  <FolderTypeId i:nil="true" />
+  <Keywords></Keywords>
+  <LastModifiedDate>2015-10-29T10:30:36.8621614-05:00</LastModifiedDate>
+  <Owner i:nil="true" />
+  <Reader i:nil="true" />
+  <Children>
+    <Item>
+      <Id>fb7f632d-de1c-42f7-9720-443ab1d62154</Id>
+      <ParentId>633559d2-0d5a-42fd-bb2f-a88a98a4c021</ParentId>
+      <LinkedItemId i:nil="true" />
+      <Type>Leaf</Type>
+      <SubType>Image</SubType>
+      <Index i:nil="true" />
+      <Name>30.tif</Name>
+      <FolderTypeId i:nil="true" />
+      <Keywords></Keywords>
+      <LastModifiedDate>2015-10-29T10:30:49.8424593-05:00</LastModifiedDate>
+      <Owner i:nil="true" />
+      <Reader i:nil="true" />
+      <Children>
+        <Item>
+          <Id>ce9831d8-8eb7-439c-8c34-f4006fa0b0fd</Id>
+          <ParentId>fb7f632d-de1c-42f7-9720-443ab1d62154</ParentId>
+          <LinkedItemId i:nil="true" />
+          <Type>Derived</Type>
+          <SubType>Image</SubType>
+          <Index i:nil="true" />
+          <Name>30.tif.thb</Name>
+          <FolderTypeId i:nil="true" />
+          <Keywords></Keywords>
+          <LastModifiedDate>2015-10-29T10:30:49.8424593-05:00</LastModifiedDate>
+          <Owner i:nil="true" />
+          <Reader i:nil="true" />
+        </Item>
+      </Children>
+    </Item>
+    <Item>
+      <Id>9437870b-3bf3-4bbc-8e42-7ae1a0846aa0</Id>
+      <ParentId>633559d2-0d5a-42fd-bb2f-a88a98a4c021</ParentId>
+      <LinkedItemId i:nil="true" />
+      <Type>Leaf</Type>
+      <SubType>DXAnnotationData</SubType>
+      <Index i:nil="true" />
+      <Name>30.tif.anx</Name>
+      <FolderTypeId i:nil="true" />
+      <Keywords></Keywords>
+      <LastModifiedDate>2015-10-29T10:30:49.8424593-05:00</LastModifiedDate>
+      <Owner i:nil="true" />
+      <Reader i:nil="true" />
+    </Item>
+    <Item>
+      <Id>b1057391-7395-49b0-b68e-5fbf016944c9</Id>
+      <ParentId>633559d2-0d5a-42fd-bb2f-a88a98a4c021</ParentId>
+      <LinkedItemId i:nil="true" />
+      <Type>Leaf</Type>
+      <SubType>DXScaleBarSettingsData</SubType>
+      <Index i:nil="true" />
+      <Name>30.tif.sbx</Name>
+      <FolderTypeId i:nil="true" />
+      <Keywords></Keywords>
+      <LastModifiedDate>2015-10-29T10:30:49.8424593-05:00</LastModifiedDate>
+      <Owner i:nil="true" />
+      <Reader i:nil="true" />
+    </Item>
+    <Item>
+      <Id>0fe7a4d4-b04a-4960-84f0-9d3c5916b0c5</Id>
+      <ParentId>633559d2-0d5a-42fd-bb2f-a88a98a4c021</ParentId>
+      <LinkedItemId i:nil="true" />
+      <Type>Leaf</Type>
+      <SubType>DXExtendedAnnotationData</SubType>
+      <Index i:nil="true" />
+      <Name>30.tif.eax</Name>
+      <FolderTypeId i:nil="true" />
+      <Keywords></Keywords>
+      <LastModifiedDate>2015-10-29T10:30:49.8424593-05:00</LastModifiedDate>
+      <Owner i:nil="true" />
+      <Reader i:nil="true" />
+    </Item>
+  </Children>
+  <ItemValues>
+    <ItemValue>
+      <Id>6257cbee-ad75-4fb4-a2d6-e5278f10b233</Id>
+      <ItemId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</ItemId>
+      <Name>Image_Description</Name>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string"></Value>
+    </ItemValue>
+    <ItemValue>
+      <Id>afde6182-932c-448d-ac84-b0fb939d3868</Id>
+      <ItemId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</ItemId>
+      <Name>Image_Notes</Name>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string"></Value>
+    </ItemValue>
+    <ItemValue>
+      <Id>00000000-0000-0000-0000-000000000000</Id>
+      <ItemId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</ItemId>
+      <Name>Image_ImageName</Name>
+      <Value xmlns:d4p1="http://www.w3.org/2001/XMLSchema" i:type="d4p1:string">30.tif</Value>
+    </ItemValue>
+  </ItemValues>
+  <LasImage>
+    <Id>9f53f6f7-655e-4d3d-af80-0e3ec7188705</Id>
+    <Included>false</Included>
+    <Processed>false</Processed>
+    <UnitName>Millimeters</UnitName>
+    <CreationUserName>CFR\mcolvin</CreationUserName>
+    <ModificationUserName>CFR\mcolvin</ModificationUserName>
+    <AcquiredDate>2015-10-29T10:30:36.5001252-05:00</AcquiredDate>
+    <CreationDate>2015-10-29T10:30:36.4871239-05:00</CreationDate>
+    <ImportDate i:nil="true" />
+    <XMetresPerPixel>6.3999938964843745E-06</XMetresPerPixel>
+    <YMetresPerPixel>6.3999938964843745E-06</YMetresPerPixel>
+    <BitDepth>24</BitDepth>
+    <NumPixelsX>2048</NumPixelsX>
+    <NumPixelsY>1536</NumPixelsY>
+    <FileSize>9437492</FileSize>
+    <DecimalPlaces>3</DecimalPlaces>
+    <Camera>
+      <Id>9f53f6f7-655e-4d3d-af80-0e3ec7188705</Id>
+      <Name>DFC290 HD</Name>
+      <Serial_Number>636593912</Serial_Number>
+      <Exposure>1.0 s</Exposure>
+      <Gamma>0.13</Gamma>
+      <Gain>1.0 x</Gain>
+      <Auto_Exposure>On</Auto_Exposure>
+      <Brightness>65 %</Brightness>
+      <Black_Clip>0</Black_Clip>
+      <White_Clip>255</White_Clip>
+      <Image_Type>Colour</Image_Type>
+      <Capture_Format>2048 x 1536,    Full Frame</Capture_Format>
+      <Shading>(None)</Shading>
+      <Sharpening>Off</Sharpening>
+    </Camera>
+    <ImageValues>
+      <ImageValue>
+        <Id>c2c6d197-b67e-404f-823c-43b0ef1c1d64</Id>
+        <LasImageId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</LasImageId>
+        <Name>Microscope_Stand_Name</Name>
+        <Type>System.String</Type>
+        <Value xmlns:d5p1="http://www.w3.org/2001/XMLSchema" i:type="d5p1:string">S8APO</Value>
+      </ImageValue>
+      <ImageValue>
+        <Id>34df2235-2c03-45f8-adf5-110e9df948b0</Id>
+        <LasImageId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</LasImageId>
+        <Name>Microscope_Visual_Magnification</Name>
+        <Type>System.String</Type>
+        <Value xmlns:d5p1="http://www.w3.org/2001/XMLSchema" i:type="d5p1:string">10</Value>
+      </ImageValue>
+      <ImageValue>
+        <Id>ff1ca657-7f33-47d5-8e28-4d9dc7e6baa1</Id>
+        <LasImageId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</LasImageId>
+        <Name>Microscope_Video_Magnification</Name>
+        <Type>System.String</Type>
+        <Value xmlns:d5p1="http://www.w3.org/2001/XMLSchema" i:type="d5p1:string">0.50</Value>
+      </ImageValue>
+      <ImageValue>
+        <Id>8befbb5a-1fb6-4786-bf76-0c1621e7d32e</Id>
+        <LasImageId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</LasImageId>
+        <Name>Microscope_Video_Dof</Name>
+        <Type>System.String</Type>
+        <Value xmlns:d5p1="http://www.w3.org/2001/XMLSchema" i:type="d5p1:string">0.372000 mm</Value>
+      </ImageValue>
+      <ImageValue>
+        <Id>7af02e13-7e17-4c55-9898-9bf88e027e1f</Id>
+        <LasImageId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</LasImageId>
+        <Name>Microscope_Main_Objective_Magnification</Name>
+        <Type>System.String</Type>
+        <Value xmlns:d5p1="http://www.w3.org/2001/XMLSchema" i:type="d5p1:string">1</Value>
+      </ImageValue>
+      <ImageValue>
+        <Id>428b4a76-b7c8-467f-aba1-431adeb0d990</Id>
+        <LasImageId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</LasImageId>
+        <Name>Microscope_Main_Objective_Nosepiece_Article_No</Name>
+        <Type>System.Int32</Type>
+        <Value xmlns:d5p1="http://www.w3.org/2001/XMLSchema" i:type="d5p1:int">0</Value>
+      </ImageValue>
+      <ImageValue>
+        <Id>593f04b8-624c-4f04-a206-f759957c8f8f</Id>
+        <LasImageId>9f53f6f7-655e-4d3d-af80-0e3ec7188705</LasImageId>
+        <Name>Microscope_Zoom_Iris</Name>
+        <Type>System.String</Type>
+        <Value xmlns:d5p1="http://www.w3.org/2001/XMLSchema" i:type="d5p1:string">1</Value>
+      </ImageValue>
+    </ImageValues>
+  </LasImage>
+</Item>

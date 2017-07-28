@@ -1,0 +1,47 @@
+---
+title: "Figures"
+---
+
+<!--
+rmarkdown::render("index.Rmd")
+to do
+1. chi for vbgf in analysis.R
+2. YPR analysis
+3. SPR analysis
+-->
+	
+```{r,echo=FALSE}
+source("R/1_global.R")  	
+source("R/2_functions.R")         
+source("R/3_load.R")     
+source("R/5_tables.R") 
+source("R/6_figures.R")  	
+#source("R/7_analysis.R")
+```
+ 
+    
+    
+    
+```{r,echo=FALSE}
+figures(1)
+```
+Figure 1. Age (_x_-axis) and length (_y_-axis; mm) of black and white crappie
+captured in Lake Washington, Mississippi.
+
+
+```{r,echo=FALSE}
+figures(2)
+``` 
+Figure 2. Length (_x_-axis; mm) and Weight (_y_-axis; ) of black and white crappie
+captured in Lake Washington, Mississippi.
+
+```{r,echo=FALSE}
+figures(3)
+```
+Figure 3. Length (_x_-axis; mm) and length (_y_-axis; mm) of black and white crappie
+captured in Lake Washington, Mississippi.
+
+
+
+
+

@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<xmile version="1.0" level="3" xmlns="http://www.systemdynamics.org/XMILE" xmlns:isee="http://iseesystems.com/XMILE">
+    <header>
+        <smile version="1.0">
+            <uses_arrays>1</uses_arrays>
+        </smile>
+        <name />
+        <uuid>03801f0f-9df2-422c-bc0b-b4cce5a01c36</uuid>
+        <vendor>isee systems</vendor>
+        <product version="10.0.2" lang="en">iThink</product>
+    </header>
+    <style>
+        <model font-size="12" />
+    </style>
+    <sim_specs time_units="Years">
+        <start>1</start>
+        <stop>6</stop>
+        <dt>0.1</dt>
+        <method>Euler</method>
+    </sim_specs>
+    <dimensions>
+        <dim name="Dim_Name_1" size="1" />
+    </dimensions>
+    <model_units />
+    <isee:prefs layer="model" grid_width="20" grid_height="50" divide_by_zero_alert="true" hide_taskbar="true" show_module_prefix="true">
+        <isee:window width="1680" height="1008" />
+        <isee:security />
+        <isee:print_setup width="767" height="587" orientation="landscape" />
+    </isee:prefs>
+    <isee:equation_prefs order_by="module" />
+    <model>
+        <stock name="Cohort_abundance">
+            <eqn>Recruits</eqn>
+            <outflow>Mortality</outflow>
+            <non_negative />
+            <display x="298" y="289" color="blue">
+                <label_side>left</label_side>
+                <label_angle>176</label_angle>
+            </display>
+        </stock>
+        <flow name="Mortality">
+            <eqn>Number_of__natural_mortalities+Number_of_fish_fishing__mortalities</eqn>
+            <non_negative />
+            <display x="400" y="289" color="blue">
+                <label_side>right</label_side>
+                <label_angle>357</label_angle>
+                <pts>
+                    <pt x="320" y="289" />
+                    <pt x="480" y="289" />
+                </pts>
+            </display>
+        </flow>
+        <aux name="F">
+            <eqn>LN(-1/(conditional_fishing_mortality_cf-1))</eqn>
+            <display x="136" y="277" color="blue" />
+        </aux>
+        <aux name="M">
+            <eqn>LN(-1/(conditaional_natural__mortality_u_or_cm-1))</eqn>
+            <display x="362" y="148" color="blue" />
+        </aux>
+        <aux name="Age_recruited\nto_fishery">
+            <eqn> LN(1-((Minimum_Length_Limit/Length_at_infinity)))/-K + t0 </eqn>
+            <display x="521" y="427" color="blue" />
+        </aux>
+        <aux name="Number_of_fish_fishing_\nmortalities">
+            <eqn>IF TIME&gt;=Age_recruited_to_fishery THEN F*Cohort_abundance ELSE 0</eqn>
+            <display x="361" y="393" color="blue">
+                <label_side>right</label_side>
+                <label_angle>16</label_angle>
+            </display>
+        </aux>
+        <aux name="Number_of_\nnatural_mortalities">
+            <eqn>M*Cohort_abundance</eqn>
+            <display x="400" y="222" color="blue">
+                <label_side>right</label_side>
+                <label_angle>304</label_angle>
+            </display>
+        </aux>
+        <aux name="Minimum_Length_Limit">
+            <eqn>280</eqn>
+            <display x="732" y="410" color="#008F44">
+                <label_side>right</label_side>
+                <label_angle>352</label_angle>
+            </display>
+        </aux>
+        <aux name="Weight_at_age">
+            <eqn>(a*Length_at_age^b)/1000 {kg conversion}</eqn>
+            <display x="228" y="464" color="blue" />
+        </aux>
+        <aux name="Length_at_age">
+            <eqn>Length_at_infinity* (1 - exp(-K * (TIME-t0))) </eqn>
+            <display x="120" y="456" color="blue">
+                <label_side>right</label_side>
+                <label_angle>71</label_angle>
+            </display>
+        </aux>
+        <aux name="a">
+            <eqn>0.0001</eqn>
+            <display x="150" y="387" color="#008F44">
+                <label_side>right</label_side>
+                <label_angle>85</label_angle>
+            </display>
+        </aux>
+        <aux name="b">
+            <eqn>3</eqn>
+            <display x="214" y="372" color="#008F44">
+                <label_side>top</label_side>
+                <label_angle>99</label_angle>
+            </display>
+        </aux>
+        <aux name="Length_at_infinity">
+            <eqn>400</eqn>
+            <display x="50" y="384" color="#008F44">
+                <label_side>top</label_side>
+                <label_angle>69</label_angle>
+            </display>
+        </aux>
+        <aux name="t0">
+            <eqn>0.1</eqn>
+            <display x="35" y="443" color="#008F44" />
+        </aux>
+        <aux name="K">
+            <eqn>0.3</eqn>
+            <display x="39" y="498" color="#008F44" />
+        </aux>
+        <aux name="Harvested_biomass">
+            <eqn>Number_of_fish_fishing__mortalities*Weight_at_age</eqn>
+            <display x="311" y="481" color="blue">
+                <label_side>right</label_side>
+                <label_angle>330</label_angle>
+            </display>
+        </aux>
+        <stock name="Yield">
+            <eqn>Harvested_biomass</eqn>
+            <inflow>Harvest</inflow>
+            <non_negative />
+            <display x="593" y="524" color="blue" />
+        </stock>
+        <flow name="Harvest">
+            <eqn>Harvested_biomass</eqn>
+            <non_negative />
+            <display x="504" y="529" color="blue">
+                <label_side>right</label_side>
+                <label_angle>43</label_angle>
+                <pts>
+                    <pt x="438" y="529" />
+                    <pt x="571" y="529" />
+                </pts>
+            </display>
+        </flow>
+        <aux name="Recruits">
+            <eqn>1000</eqn>
+            <display x="77" y="55" color="blue" />
+        </aux>
+        <aux name="conditaional_natural_\nmortality_u_or_cm">
+            <eqn>0.5</eqn>
+            <display x="253" y="106" color="blue" />
+        </aux>
+        <aux name="conditional_fishing\nmortality_cf">
+            <eqn>0.2</eqn>
+            <display x="87" y="189" color="#008F44" />
+        </aux>
+        <display show_pages="false" page_width="767" page_height="587" page_sequence="row" page_rows="3" page_cols="3" isee:show_values_on_hover="true" isee:converter_size="medium" zoom="100" isee:animate_flows="true" isee:animate_stocks="true" isee:animate_converters="true" report_flows="summed" scroll_x="0" scroll_y="0">
+            <connector x="309" y="272" uid="0" color="#FF007F">
+                <from>Cohort_abundance</from>
+                <to>Number_of__natural_mortalities</to>
+            </connector>
+            <connector x="142" y="282" uid="1" color="#FF007F">
+                <from>F</from>
+                <to>Number_of_fish_fishing__mortalities</to>
+            </connector>
+            <connector x="513" y="430" uid="2" color="#FF007F">
+                <from>Age_recruited_to_fishery</from>
+                <to>Number_of_fish_fishing__mortalities</to>
+            </connector>
+            <connector x="365" y="385" uid="3" color="#FF007F">
+                <from>Number_of_fish_fishing__mortalities</from>
+                <to>Mortality</to>
+            </connector>
+            <connector x="400" y="231" uid="4" color="#FF007F">
+                <from>Number_of__natural_mortalities</from>
+                <to>Mortality</to>
+            </connector>
+            <connector x="371" y="151" uid="5" color="#FF007F">
+                <from>M</from>
+                <to>Number_of__natural_mortalities</to>
+            </connector>
+            <connector x="309" y="306" uid="6" color="#FF007F">
+                <from>Cohort_abundance</from>
+                <to>Number_of_fish_fishing__mortalities</to>
+            </connector>
+            <alias x="625" y="378" uid="7" color="blue">
+                <of>Length_at_infinity</of>
+            </alias>
+            <alias x="645" y="459" uid="8" color="blue">
+                <of>t0</of>
+            </alias>
+            <alias x="560" y="363" uid="9" color="blue">
+                <of>K</of>
+            </alias>
+            <connector x="552" y="368" uid="10" color="#FF007F">
+                <from>
+                    <alias uid="9" />
+                </from>
+                <to>Age_recruited_to_fishery</to>
+            </connector>
+            <connector x="261" y="103" uid="11" color="#FF007F">
+                <from>conditaional_natural__mortality_u_or_cm</from>
+                <to>M</to>
+            </connector>
+            <connector x="57" y="389" uid="12" color="#FF007F">
+                <from>Length_at_infinity</from>
+                <to>Length_at_age</to>
+            </connector>
+            <connector x="44" y="445" uid="13" color="#FF007F">
+                <from>t0</from>
+                <to>Length_at_age</to>
+            </connector>
+            <connector x="48" y="499" uid="14" color="#FF007F">
+                <from>K</from>
+                <to>Length_at_age</to>
+            </connector>
+            <connector x="616" y="379" uid="15" color="#FF007F">
+                <from>
+                    <alias uid="7" />
+                </from>
+                <to>Age_recruited_to_fishery</to>
+            </connector>
+            <connector x="129" y="456" uid="16" color="#FF007F">
+                <from>Length_at_age</from>
+                <to>Weight_at_age</to>
+            </connector>
+            <connector x="159" y="389" uid="17" color="#FF007F">
+                <from>a</from>
+                <to>Weight_at_age</to>
+            </connector>
+            <connector x="219" y="379" uid="18" color="#FF007F">
+                <from>b</from>
+                <to>Weight_at_age</to>
+            </connector>
+            <connector x="366" y="400" uid="19" color="#FF007F">
+                <from>Number_of_fish_fishing__mortalities</from>
+                <to>Harvested_biomass</to>
+            </connector>
+            <connector x="237" y="466" uid="20" color="#FF007F">
+                <from>Weight_at_age</from>
+                <to>Harvested_biomass</to>
+            </connector>
+            <connector x="315" y="490" uid="21" color="#FF007F">
+                <from>Harvested_biomass</from>
+                <to>Harvest</to>
+            </connector>
+            <connector x="723" y="413" uid="22" color="#FF007F">
+                <from>Minimum_Length_Limit</from>
+                <to>Age_recruited_to_fishery</to>
+            </connector>
+            <connector x="637" y="463" uid="23" color="#FF007F">
+                <from>
+                    <alias uid="8" />
+                </from>
+                <to>Age_recruited_to_fishery</to>
+            </connector>
+            <connector x="92" y="197" uid="24" color="#FF007F">
+                <from>conditional_fishing_mortality_cf</from>
+                <to>F</to>
+            </connector>
+            <stacked_container x="541" y="32" height="282" width="492" visible_index="0" uid="pad_89706926">
+                <graph type="time_series" title="Cohort yield" background="#FFFFC9" show_grid="true" numbers_on_plots="true" isee:use_five_segments="false" isee:date_time="-768430754" time_precision="2" from="1" to="6">
+                    <plot pen_width="3" precision="0">
+                        <index>0</index>
+                        <color>blue</color>
+                        <show_y_axis>true</show_y_axis>
+                        <entity name="Yield" />
+                    </plot>
+                </graph>
+                <graph type="scatter" title="Untitled" background="#FFFFC9" show_grid="false" numbers_on_plots="false" isee:use_five_segments="false" isee:date_time="-768430754" time_precision="2">
+                    <plot pen_width="1" precision="0">
+                        <index>0</index>
+                        <color>blue</color>
+                        <show_y_axis>true</show_y_axis>
+                        <entity name="Length_at_age" />
+                    </plot>
+                    <plot pen_width="1" precision="0">
+                        <index>1</index>
+                        <color>red</color>
+                        <show_y_axis>true</show_y_axis>
+                        <entity name="Cohort_abundance" />
+                    </plot>
+                </graph>
+            </stacked_container>
+            <pad_icon x="563" y="48" width="26" height="22" color="#008F44" label="Graph 1" type="graph" icon_of="pad_89706926">
+                <label_side>bottom</label_side>
+            </pad_icon>
+            <stacked_container x="744" y="559" height="270" width="475" visible_index="0" uid="pad_89706954">
+                <table title="Untitled Table" font-size="9" background="#E0E0E0" columns_width="59" orientation="vertical" report_interval="1" isee:periods="6" report_from="1" report_to="6" report_flows="summed" isee:date_time="-768430754">
+                    <item type="time" color="black" text-align="left" precision="3" width="100" />
+                    <item color="black" text-align="left" precision="2" thousands_separator="true">
+                        <entity name="Cohort_abundance" />
+                        <index>0</index>
+                    </item>
+                    <item color="black" text-align="left" precision="2" thousands_separator="true">
+                        <entity name="Length_at_age" />
+                        <index>1</index>
+                    </item>
+                </table>
+            </stacked_container>
+            <pad_icon x="766" y="575" width="26" height="22" color="#008F44" label="Table 2" type="table" icon_of="pad_89706954">
+                <label_side>bottom</label_side>
+            </pad_icon>
+            <numeric_display units="percentage" thousands_separator="true" color="blue" show_name="true" retain_ending_value="true" uid="25" x="937" y="20">
+                <entity name="Yield" />
+            </numeric_display>
+        </display>
+        <interface scroll_x="0" scroll_y="0" zoom="100">
+            <simulation_delay>0.1</simulation_delay>
+            <pages show="false" row_count="1" column_count="1" home_page="1" width="788" height="528" />
+        </interface>
+    </model>
+</xmile>
