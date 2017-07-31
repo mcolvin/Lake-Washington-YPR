@@ -19,5 +19,5 @@ dat<- subset(dat,Spp..Code %in% c(1408, 1409, 1410))
 egg<- read.csv("dat/eggs lake washington.csv")
 
 
-
+#loadsave(out,file="ypr.Rdata")
 

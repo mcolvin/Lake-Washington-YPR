@@ -5,8 +5,8 @@ output:
   html_document:
     toc: true  
   word_document:  
-    fig_width: 5  
-    fig_height: 5 
+    fig_width: 6.5  
+    fig_height: 6.5 
     reference_docx: style.docx
 ---  
 
@@ -49,7 +49,7 @@ source("R/6_figures.R")
 ```{r child='_discussion.Rmd'}
 ```
 
-```{r child='_figures-and-tables.Rmd',eval=FALSE}
+```{r child='_figures-and-tables.Rmd'}
 ```     
 
 # References

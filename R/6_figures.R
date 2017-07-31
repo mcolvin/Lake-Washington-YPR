@@ -2,7 +2,7 @@ figures<- function(n){
 
 if(n==1)
 	{
-    par(mfrow=c(1,3))    
+    par(mfrow=c(3,1))    
     ###################################################################    
     # AGE LENGTH
     ###################################################################
@@ -60,12 +60,192 @@ if(n==1)
     }
 if(n==2)
     {
+    #######################################################################
+    # YPR 
+    #######################################################################
+
+    par(mfrow=c(3,3),mar=c(1,1,0.5,.5),oma=c(3,3,2,1),las=1)
+    ## f below = 0
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.1 &  maximum_cf_below== 0.0))
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)
+    mtext(side=3,"cm=0.1",line=0.5)
+
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.2 &  maximum_cf_below== 0.0))
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',yaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)  
+    mtext(side=3,"cm=0.2",line=0.5)
+
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.3 &  maximum_cf_below== 0.0))
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',yaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)  
+    mtext(side=3,"cm=0.3",line=0.5)
+    legend("bottomright",c("254 mm", "279.4 mm","304.8 mm"),bty='n',lty=c(1:3),col="black")
+    ## f below = 0.1
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.1 &  maximum_cf_below== 0.1))
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.2 &  maximum_cf_below== 0.1))
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',xaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)    
+
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.3 &  maximum_cf_below== 0.1))
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',xaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)    
+
+
+    ## f below = 0.2
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.1 &  maximum_cf_below== 0.2))
+    matplot(xx[,1],xx[,-1],type='l',lty=c(1,2,3),col="black")    
+
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.2 &  maximum_cf_below== 0.2))
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=2,at=axTicks(2),labels=FALSE)     
+
+    xx<-dcast(out,u_above~limit,
+        value.var="Y",
+        mean,
+        subset=.(cm==0.3 &  maximum_cf_below== 0.2))
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=2,at=axTicks(2),labels=FALSE)   
+
+    mtext(side=2,"Yield per 1000 recruits (kg)",line=1.5,outer=T,
+        las=3,cex=1.2)
+    mtext(side=1,"Exploitation above minimum length limit",line=2,outer=T,
+        las=1,cex=1.2)
+	
         
 
     }
     
 if(n==3)
-    {# PLOT OF FECUNDITY
+    {
+    
+    #######################################################################
+    # SPR 
+    #######################################################################
+    #spr_0<-out[out$F_below==0 &
+    #    out$F_above==0,]
+
+
+    par(mfrow=c(3,3),mar=c(1,1,0.5,.5),oma=c(3,3,2,1),las=1)
+    ## f below = 0
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.1 &  maximum_cf_below== 0.0))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)
+    mtext(side=3,"cm=0.1",line=0.5)
+
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.2 &  maximum_cf_below== 0.0))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',yaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)  
+    mtext(side=3,"cm=0.2",line=0.5)
+
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.3 &  maximum_cf_below== 0.0))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',yaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)  
+    mtext(side=3,"cm=0.3",line=0.5)
+    legend("topright",c("254 mm", "279.4 mm","304.8 mm"),bty='n',lty=c(1:3),col="black")
+    ## f below = 0.1
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.1 &  maximum_cf_below== 0.1))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',xaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.2 &  maximum_cf_below== 0.1))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',xaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)    
+
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.3 &  maximum_cf_below== 0.1))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',xaxt='n',lty=c(1,2,3),col="black")    
+    axis(side=1,at=axTicks(1),labels=FALSE)  
+    axis(side=2,at=axTicks(2),labels=FALSE)    
+
+
+    ## f below = 0.2
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.1 &  maximum_cf_below== 0.2))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',lty=c(1,2,3),col="black")    
+
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.2 &  maximum_cf_below== 0.2))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=2,at=axTicks(2),labels=FALSE)     
+
+    xx<-dcast(out,u_above~limit,
+        value.var="E",
+        mean,
+        subset=.(cm==0.3 &  maximum_cf_below== 0.2))
+    xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]   
+    matplot(xx[,1],xx[,-1],type='l',yaxt='n',lty=c(1,2,3),col="black")   
+    axis(side=2,at=axTicks(2),labels=FALSE)   
+
+    mtext(side=2,"Spawning potential ratio (SPR)",line=1.5,outer=T,
+        las=3,cex=1.2)
+    mtext(side=1,"Exploitation above minimum length limit",line=2,outer=T,
+        las=1,cex=1.2)
+	
 
     }
 }

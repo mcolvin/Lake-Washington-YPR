@@ -1,27 +1,39 @@
 
 # Tables
 
+Table 1. Model inputs
 
 # Figures
     
-```{r,echo=FALSE}
+```{r,echo=FALSE,fig.align="center"}
 figures(1)
 ```
-Figure 1. Age (_x_-axis) and length (_y_-axis; mm) of black and white crappie
+
+Figure 1. Age (_x_-axis) and length (_y_-axis; mm) (top panel,
+Length (_x_-axis; mm) and Weight (_y_-axis; g) (middle panel),
+Length (_x_-axis; mm) and length (_y_-axis; mm) (bottom panel) 
+ of black and white crappie
 captured in Lake Washington, Mississippi.
 
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,fig.align="center"}
 figures(2)
 ``` 
-Figure 2. Length (_x_-axis; mm) and Weight (_y_-axis; ) of black and white crappie
-captured in Lake Washington, Mississippi.
 
-```{r,echo=FALSE}
+Figure 2. Yield per 1000 recruits (_y_-axis) for varying conditional natural
+mortality rates and exploitation rates. Top panels represent no fishing mortality
+below the minimum length limit. The middle and bottom rows represent 0.1 and 0.2 
+respectively.
+
+
+```{r,echo=FALSE,fig.align="center"}
 figures(3)
 ```
-Figure 3. Length (_x_-axis; mm) and length (_y_-axis; mm) of black and white crappie
-captured in Lake Washington, Mississippi.
+
+Figure 2. Spawning potential ratio (_y_-axis) for varying conditional natural
+mortality rates and exploitation rates. Top panels represent no fishing mortality
+below the minimum length limit. The middle and bottom rows represent 0.1 and 0.2 
+respectively.
 
 
 

@@ -99,7 +99,7 @@ combos<-function(input,...)
         cf = seq(0,0.9,by=0.05),
         limit=mll_mm,
         min_size_harvested=min_size_harvested,
-        maximum_cf_below = seq(0,input$maximum_cf_below,length=4)
+        maximum_cf_below = seq(0,input$maximum_cf_below,length=3)
         )
     }
 
