@@ -64,15 +64,13 @@ agedat<- merge(agedat, rw, by=c("l_bin"),all.x=TRUE)
     
 
     
-vbgf_fit  <- try(
-    nls(Length..mm.~ Linf * (1- exp(-k*(Age-t0))),
+vbgf_fit  <- nls(Length..mm.~ Linf * (1- exp(-k*(Age-t0))),
     agedat,start=list(
         Linf=305, 
         k=0.2, 
         t0=0.0),
     weights= agedat$rw,
-    control=list(maxiter=3000)),
-    silent=T)	
+    control=list(maxiter=3000))	
 
 #######################################################################
 # LENGTH-FECUNDITY
@@ -86,7 +84,7 @@ fit_fecundity<-lm(log(totalEggs)~log(length),
 # YPR AND SPR
 #######################################################################    
 input<-list()    
-input$spp_ratio<- c(0.75, 0.25) # PROPORTION WHITE AND BLACK CRAPPIE
+input$spp_ratio<- c(WC=0.75, BC=0.25) # PROPORTION WHITE AND BLACK CRAPPIE
 input$mll<- "10, 11, 12"
 input$conditional_mortality<- "0.1, 0.2, 0.3"
 input$maxAge<- max(na.omit(agedat$Age))
@@ -108,34 +106,53 @@ input$minimum_harvested<- 9
 input$maximum_cf_below<- 0.2 
 
 # MAKE COMBINATIONS OF MORTALITY AND 
-out<-combos(input)
-
-input$minimum_harvested<- out$min_age_harvested[1]
-input$tr<- out$tr[1]
-input$M<- out$M_above[1]
-input$F_above<- out$F_above[1]
-input$F_below<- out$F_below[1]
-
-
-
-## SOLVE THE SYSTEM FOR ALL 
-out <- ode(
-    y = c(WC=input$R*input$spp_ratio[1],BC=input$R*input$spp_ratio[2], 
-        Y=0), 
-    times = seq(1,input$maxAge+1,by=0.1), 
-    func = biomass_yield, 
-    parms = input,
-    method="lsoda")
-out<-as.data.frame(out)
-# GET YIELD
-return(out$Y[nrow(out)]/1000)
-}
+out<-combos(input=input)
+out$Y<-NA
+out$E<-NA
+for(i in 1:nrow(out))
+    {
+    input$minimum_harvested<- out$min_age_harvested[i]
+    input$tr<- out$tr[i]
+    input$M<- out$M_above[i]
+    input$F_above<- out$F_above[i]
+    input$F_below<- out$F_below[i]
 
 
+    ## SOLVE THE SYSTEM FOR ALL 
+    outt <- ode(
+        y = c(WC=as.numeric(input$R*input$spp_ratio["WC"]),
+            BC=as.numeric(input$R*input$spp_ratio["BC"]), 
+            Y=0,EWC=0,EBC=0), 
+        times = seq(1,input$maxAge+1,by=0.1), 
+        func = biomass_yield, 
+        parms = input,
+        method="lsoda")
+    outt<-as.data.frame(outt)
+    # GET YIELD
+    out$Y[i]<-outt$Y[nrow(outt)]/1000
+    out$E[i]<- outt$EWC[nrow(outt)]+outt$EBC[nrow(outt)]
+    }
+   
 
 
+xx<-dcast(out,u_above~limit,value.var="Y",
+    mean,
+    subset=.(cm==0.1& F_below== 0))
+   
+matplot(xx[,1],xx[,-1],type='l')    
 
-#sim$Y<- apply(sim,1,yield_sim)
+#######################################################################
+# SPR 
+#######################################################################
+#spr_0<-out[out$F_below==0 &
+#    out$F_above==0,]
+xx<-dcast(out,u_above~limit,
+    value.var="E",
+    mean,
+    subset=.(cm==0.1 & F_below== 0.0))
+xx[,-1]<- xx[,-1]/xx[rep(1,nrow(xx)),-1]
+matplot(xx[,1],xx[,-1],type='l')    
+
 
 	
 sim<- sim[order(sim$M_above, sim$maximum_cf_below),]

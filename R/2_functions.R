@@ -4,6 +4,8 @@ biomass_yield<- function(t,state,parameters)
 	WC<-state['WC'] # WHITE CRAPPIE
 	BC<-state['BC'] # BLACK CRAPPIE
 	Y<-state['Y']	# YIELD FOR BOTH
+	EWC<-state['EWC']	# YIELD FOR BOTH
+	EBC<-state['EBC']	# YIELD FOR BOTH
 	x<- t # age
 	
 	# SET FISHING MORTALITY GIVEN AGE
@@ -22,13 +24,13 @@ biomass_yield<- function(t,state,parameters)
 	# CALCULATE LENGTH AND WEIGHT AT AGE
 	## LENGTH AT AGE
     ## POOLED VBGF FOR BC AND WC
-	Lt<-parameters$linf * (1 - exp(-parameters$k * (x-parameters$t0)))
+	Lt<-as.numeric(parameters$linf * (1 - exp(-parameters$k * (x-parameters$t0))))
 	
     ## WEIGHT AT AGE
 	### WHITE CRAPPIE
-    Wt_wc = parameters$a[1]*Lt^parameters$b[1]
+    Wt_wc = as.numeric(parameters$a[1]*Lt^parameters$b[1])
     ### BLACK CRAPPIE
-    Wt_bc = parameters$a[2]*Lt^parameters$b[2]    
+    Wt_bc = as.numeric(parameters$a[2]*Lt^parameters$b[2]    )
     
     
     
@@ -44,14 +46,22 @@ biomass_yield<- function(t,state,parameters)
 	dWC<- -N_died_wc - N_harvested_wc
 	dBC<- -N_died_bc - N_harvested_bc
 	
+    ## EGGS
+    eggs_bc<-(exp(parameters$a_fec)*Lt^parameters$b_fec)*WC*0.5
+    eggs_wc<-(exp(parameters$a_fec)*Lt^parameters$b_fec)*BC*0.5
+    dEWC<- ifelse(x>2.5,as.numeric(eggs_wc),0)
+    dEBC<- ifelse(x>2.5,as.numeric(eggs_bc),0)
+    
 	## CHANGE IN YIELD
 	dY<- (N_harvested_wc*Wt_wc+N_harvested_bc*Wt_bc)	
 	
-	ret<-list(c(dWC,dBC,dY),
+	ret<-list(c(dWC,dBC,dY,dEWC,dEBC),
 		Biomass=as.vector(N_harvested_wc*Wt_wc+N_harvested_bc*Wt_bc),
 		Lt=as.vector(Lt),
 		Wt_wc=as.vector(Wt_wc),
-		Wt_bc=as.vector(Wt_bc))
+		Wt_bc=as.vector(Wt_bc),
+        EWC=eggs_wc,
+        EBC=eggs_bc)
 	return(ret)
 	}
 
@@ -86,7 +96,7 @@ combos<-function(input,...)
     }
     if(input$maximum_cf_below>0){
     sim<- expand.grid(cm = sim_cm,
-    cf = seq(0,0.9,by=0.05),
+        cf = seq(0,0.9,by=0.05),
         limit=mll_mm,
         min_size_harvested=min_size_harvested,
         maximum_cf_below = seq(0,input$maximum_cf_below,length=4)

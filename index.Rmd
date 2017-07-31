@@ -1,13 +1,22 @@
 ---
-title: "Figures"
----
+title: "Manuscript"
+date: "`r format(Sys.Date())`"
+output:
+  html_document:
+    toc: true  
+  word_document:  
+    fig_width: 5  
+    fig_height: 5 
+    reference_docx: style.docx
+---  
 
 <!--
-rmarkdown::render("index.Rmd")
+
+rmarkdown::render("index.Rmd",output_format=c("html_document","word_document"))
 to do
 1. chi for vbgf in analysis.R
-2. YPR analysis
-3. SPR analysis
+2. need a maturity function
+3. params: in yml read in outputs
 -->
 	
 ```{r,echo=FALSE}
@@ -18,30 +27,31 @@ source("R/5_tables.R")
 source("R/6_figures.R")  	
 #source("R/7_analysis.R")
 ```
- 
-    
-    
-    
-```{r,echo=FALSE}
-figures(1)
-```
-Figure 1. Age (_x_-axis) and length (_y_-axis; mm) of black and white crappie
-captured in Lake Washington, Mississippi.
 
+# Introduction
 
-```{r,echo=FALSE}
-figures(2)
+```{r child='_introduction.Rmd'}
 ``` 
-Figure 2. Length (_x_-axis; mm) and Weight (_y_-axis; ) of black and white crappie
-captured in Lake Washington, Mississippi.
 
-```{r,echo=FALSE}
-figures(3)
+# Methods
+
+```{r child='_methods.Rmd'}
+``` 
+
+# Results
+
+```{r child='_results.Rmd'}
 ```
-Figure 3. Length (_x_-axis; mm) and length (_y_-axis; mm) of black and white crappie
-captured in Lake Washington, Mississippi.
 
 
+# Discussion
 
+```{r child='_discussion.Rmd'}
+```
 
+```{r child='_figures-and-tables.Rmd',eval=FALSE}
+```     
 
+# References
+
+    

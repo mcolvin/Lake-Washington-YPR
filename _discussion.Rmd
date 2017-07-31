@@ -1,72 +1,96 @@
----
-title: "Discussion"
----
 
-# Discussion
+Crappyie are an important sportfish in the United States 
+(Maceina and Stimpert 1998). They are often managed for as the same 
+species because anglers rarely differentiate between the two species 
+(Mitzner 1991). For this study we evaluated the two species together 
+because under the current regulations there is no difference in length 
+limits or bag limits for Black and White Crappie. 
 
-Black and White Crappie are important sport fish in the United States (Maceina and Stimpert 1998).
-They are often managed for as the same species because anglers rarely differentiate between the
- two species (Mitzner 1991).
-For this study we evaluated the two species together because under the current regulations there
- is no difference in length
- limits or bag limits for Black and White Crappie.
-However, one species is often more abundant than the other in one system (Sammons et al. 2002).
-Assuming that Catch per Unit Effort in Lake Washington is linearly related to abundance, it can be
- suggested that there is more Black Crappie than White Crappie in the system.
-There is data that suggest that there may be a bias for Black Crappie when using trap nets, resulting
- in more Black Crappie being sampled that white crappie when relying solely on trap style nets for
- catch data (Sammons et al. 2002).
-It is also is shown that electrofishing may be more effective in capturing larger fish needed to obtain
- age and growth data, and that trap nets may be biased to smaller, younger fish (Sammons et al. 2002).
-Electrofishing in the spring could be done to add data, and improve the yield per recruit models.
-In our study, the mean length and weight was greater for Black Crappie than White Crappie.
-The mean age of White Crappie captured was also lower than the mean age of Black Crappie captured.
-This could suggest that trap nets are biased to capturing more Black Crappie, and that some electrofishing may also
- be needed to sample the larger fish in the system.
+However, one species 
+is often more abundant than the other in one system (Sammons et al. 
+2002). Assuming that Catch per Unit Effort in Lake Washington is 
+linearly related to abundance, it can be suggested that there is more 
+Black Crappie than White Crappie in the system. There is data that 
+suggest that there may be a bias for Black Crappie when using trap nets, 
+resulting in more Black Crappie being sampled that white crappie when 
+relying solely on trap style nets for catch data (Sammons et al. 2002). 
+It is also is shown that electrofishing may be more effective in 
+capturing larger fish needed to obtain age and growth data, and that 
+trap nets may be biased to smaller, younger fish (Sammons et al. 2002). 
 
+Electrofishing in the spring could be done to add data, and improve the 
+yield per recruit models. In our study, the mean length and weight was 
+greater for Black Crappie than White Crappie. 
 
-Length limits have become increasingly popular ways on managing to meet angler demands of larger fish in the system.
-In many systems, harvest numbers, not larger sized fish, is of more importance to crappie anglers (Hale et all 1999).
-Lake Washington may be unique in that some anglers are specially seeking the larger trophy sized fish, yet others are
- seeking large numbers of fish harvested (N. Aycock, unpublished data).
-In a study by Hale et al. (1999), a 254 mm length limit was imposed on the Delaware Reservoir to increase size of crappie
- caught without greatly reducing harvest numbers.
-The length limit was successful in increasing the mean size of fish caught, but it did dramatically decrease annual yield.
-However, improvements to fisheries are specific to the study area and are susceptible to fluctuating year class
- strength (Webb and Ott 1991). 
-In our study we noted that in every scenario presented yield would most likely decrease with an increased MLL.
-However, by increasing the length limit, the mean size of fish harvested would most likely increase.
-Keeping the “5 under rule”  in place would still allow for the harvest of fish below the MLL, allowing anglers to
- still keep a 254 mm if, if the MLL length limit was increased. 
+The mean age of White 
+Crappie captured was also lower than the mean age of Black Crappie 
+captured. This could suggest that trap nets are biased to capturing more 
+Black Crappie, and that some electrofishing may also be needed to sample 
+the larger fish in the system. 
+
+ 
+
+Length limits have become increasingly popular ways on managing to meet 
+angler demands of larger fish in the system. In many systems, harvest 
+numbers, not larger sized fish, is of more importance to crappie anglers 
+(Hale et all 1999). Lake Washington may be unique in that some anglers 
+are specially seeking the larger trophy sized fish, yet others are 
+seeking large numbers of fish harvested (N. Aycock, unpublished data). 
+In a study by Hale et al. (1999), a 254 mm length limit was imposed on 
+the Delaware Reservoir to increase size of crappie caught without 
+greatly reducing harvest numbers. The length limit was successful in 
+increasing the mean size of fish caught, but it did dramatically 
+decrease annual yield. However, improvements to fisheries are specific 
+to the study area and are susceptible to fluctuating year class strength 
+(Webb and Ott 1991). 
+
+In this study we noted that in every scenario 
+presented yield would most likely decrease with an increased MLL. 
+However, by increasing the length limit, the mean size of fish harvested 
+would most likely increase. Keeping the “5 under rule” in place would 
+still allow for the harvest of fish below the MLL, allowing anglers to 
+still keep a 254 mm if, if the MLL length limit was increased. 
+
 	
-    
-Miranda and Allen (1995) suggest that reducing exploitation by the use of harvest restrictions does not always improve yield.
-They found that yield is only likely to increase due to harvest restrictions when growth is fast and natural mortality is low.
-However, their model does suggest that decreasing annual exploitation, or restricting harvest, can increase the average weight
- of fish caught, but only when growth is fast and natural mortality is low.
-According to the models outlined in their paper the population in Lake Washington is a ??? growing population with
- (high/low natural mortality).
-Another issue often associated with managing crappie populations is how variable recruitment into crappie populations is.
-This may affect the estimate of total annual mortality of the population.
-A catch curve analysis was used to estimate our annual mortality; this method assumes that there is constant recruitment
- into the population (Allen 1997).
-Crappie populations have been shown to experience variability in recruitment to age-1 (McDonough and Buchanan 1991;
- Webb and Ott 1991: Mitzner 1995).
-Our models do not take into account variable annual mortality rates, and yield from year to year will most likely fluctuate
- with fluctuating recruitment.
+Miranda and Allen (1995) suggest that reducing exploitation by the use 
+of harvest restrictions does not always improve yield. They found that 
+yield is only likely to increase due to harvest restrictions when growth 
+is fast and natural mortality is low. However, their model does suggest 
+that decreasing annual exploitation, or restricting harvest, can 
+increase the average weight of fish caught, but only when growth is fast 
+and natural mortality is low. According to the models outlined in their 
+paper the population in Lake Washington is a ??? growing population with 
+(high/low natural mortality). Another issue often associated with 
+managing crappie populations is how variable recruitment into crappie 
+populations is. This may affect the estimate of total annual mortality 
+of the population. A catch curve analysis was used to estimate our 
+annual mortality; this method assumes that there is constant recruitment 
+into the population (Allen 1997). Crappie populations have been shown to 
+experience variability in recruitment to age-1 (McDonough and Buchanan 
+1991; Webb and Ott 1991: Mitzner 1995). Our models do not take into 
+account variable annual mortality rates, and yield from year to year 
+will most likely fluctuate with fluctuating recruitment. 
+
+White Crappie are thought to grow faster than Black Crappie due to 
+their piscivorous diet (Ellison 1984). In a 2002 study, Sammons et al. 
+found data that supported this conclusion. They found that by age 4, 
+Black Crappie were on average 30 mm smaller than White Crappie. 
+Variability in size at the same age could affect the age at which one of 
+the species is effected by the MLL. If White Crappie are reaching the 
+MLL before Black Crappie, and are less abundant that Black Crappie in 
+the system, catch rates could be potentially affected. 
 
 
-White Crappie are thought to grow faster than Black Crappie due to their piscivorous diet (Ellison 1984).
-In a 2002 study, Sammons et al. found data that supported this conclusion.
-They found that by age 4, Black Crappie were on average 30 mm smaller than White Crappie.
-Variability in size at the same age could affect the age at which one of the species is effected by the MLL.
-If White Crappie are reaching the MLL before Black Crappie, and are less abundant that Black Crappie in the system,
- catch rates could be potentially affected. 
 
 
 
+* Blacks versus whites and justification for combining, CPUE suggests 
+they are a small component of Crappie stock, But there could be some 
+habitat segregation (any papers documenting different growth? Different 
+mortality rates?) 
 
+* Effect of increasing MLL ? increased opportunities to harvest 5 under 
+because more fish from 8? 12” versus 8? 10”, Creel indicates 8” over is 
+harvested (N. Aycock Unpublished data) 
 
-* Blacks versus whites and justification for combining, CPUE suggests they are a small component of Crappie stock, But there could be some habitat segregation (any papers documenting different growth? Different mortality rates?)
-* Effect of increasing MLL ? increased opportunities to harvest 5 under because more fish from 8? 12” versus 8? 10”, Creel indicates 8” over is harvested (N. Aycock Unpublished data)
 
