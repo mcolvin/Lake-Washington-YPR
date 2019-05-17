@@ -1,5 +1,5 @@
 ---
-title: "Manuscript"
+title: "Evaluating the potential for a growth and recruit overfishing when harvest is allowed under the minimum length limit"
 date: "`r format(Sys.Date())`"
 output:
   html_document:
@@ -8,7 +8,9 @@ output:
     fig_width: 6.5  
     fig_height: 6.5 
     reference_docx: style.docx
+bibliography: refs.bib
 ---  
+
 
 <!--
 
@@ -18,40 +20,356 @@ to do
 2. need a maturity function
 3. params: in yml read in outputs
 -->
-	
-```{r,echo=FALSE}
+
+
+
+```{r,echo=FALSE,warnings=FALSE, message=FALSE}
 source("R/1_global.R")  	
 source("R/2_functions.R")         
 source("R/3_load.R")     
 source("R/5_tables.R") 
 source("R/6_figures.R")  	
-#source("R/7_analysis.R")
+#source("R/8_analysis.R")
 ```
 
-# Introduction
+$Y=i=12t=1i[C(t)iW(t)i]dt$ 	(1)
 
-```{r child='_introduction.Rmd'}
-``` 
+where c(t)iwas the age-specific cach, W(t)i was the weight at age, i was 
+the maximum age, and $i$ indexed species. Equation 1 was numerically 
+integrated given inputs described below to calculate yield for weight at 
+age and catch at age equations {Colvin, 2013 #4635}. 
 
-# Methods
 
-```{r child='_methods.Rmd'}
-``` 
+Catch at age
+We modeled catch as the age-specific product of fishing mortality and 
+natural mortality as 
+
+
+$C(t)i=F(t)Rie-(Mtr,i)e-(M+F(t))(tr,i-tb,i)  e-(M+F(t))(t-tr,i)$,	(2)
+
+where F(t)i was the age specific fishing mortality, $R_i$ was the species specific number of fish recruited to the cohort, Miwas the instantaneous natural mortality rate,  was the age that a fish recruits to the fishery, $t_{b,i}$ was the age a fish recruited to the entire fishery, $t$ was age, and $i$ indexed species. Fishing mortality varied with age as 
+
+	(3)
+
+
+Weight at age
+
+
+## SPR
+
+## Overfishing analysis
+
+We used the YPR model to evaluate 3 proposed MLL, 254 mm, 279.4 mm, and 
+304.80; varying fishing mortalities below the MLL (0, 0.01, 0.05, 0.1, 
+0.2) and exploitation rates above the MLL from 0 to 0.9 in increments of 
+0.05. By evaluating various fishing mortality below the MLL we were able 
+to evaluate the potential effect of fishing mortality below the MLL, 
+while still evaluating that effect that different length limits would 
+have on yield in the system. This would also allow us to see when, if at 
+all, growth overfishing could occur in the system. Once the required 
+information: length-weight relationship, the VBGF, and annual 
+exploitation were calculated we were able to simulate 5 different Yield 
+per Recruit models, each assessing a different conditional fishing 
+mortality below the MLL and the three options for the proposed length 
+limit; 254, 279.4, 304.8 mm. We visually assessed the fishery for the 
+potential for growth overfishing, by looking for decline in yield with 
+increased effort. 
+
 
 # Results
 
-```{r child='_results.Rmd'}
-```
+We captured 478 crappie, 360 Black Crappie and 118 White Crappie. Of the 
+crappie caught, 154 Black Crappie and 62 White Crappie were retained and 
+used to fit age-length and length-weight models. Size structure varied 
+between Black and White Crappie and total length varied from 105 to 359 
+mm and 100 to 364 mm respectively (Table 1). 
+
+
+## Predictive relationships
+
+Length-weight
+* strong evidence for difference between species (intercept and slope), 
+competing models were 6 or more AIC points away 
+
+
+1. no species difference: AIC= -226.1
+1. intercept varies by species: AIC= -260.1
+1. intercept and slope varies between species: AIC= -266.0
+
+
+Age-length
+Length-fecundity
+
+
+## Yield per Recruit analysis
+
+### Growth overfishing
+
+For each scenario, the current MLL of 254 mm had the greatest yield at 
+the 41% exploitation rate. Yield decrease in every scenario with an 
+increased MLL. As the conditional fishing mortality below the MLL 
+increases we see a shift to the right on the exploitation axis was the 
+254 mm length limit yield exceeds the 279.4 and 3014.8 mm length limit 
+yield. However, for each scenario this point occurs under the 41% 
+exploitation line that this fishery experiences. 
+
+
+### Recruit overfishing
+
+Spawning potential ratios decreased with increasing exploitation and 
+decreasing MLL. 
+
+* SPR decreased with increasing fishing mortality below the MLL
+* 12" offered most protection from recruit overfishing with no scenarios exceeding 0.3
+* 11" offered lots of protection for a range of fishing mortality and 
+0.3 was not exceeded until u was higher than xxx. 
+* 10" offered some protection but it only for u values < xxxx.
 
 
 # Discussion
 
-```{r child='_discussion.Rmd'}
+Crappie are an important sportfish in the United States (Maceina and 
+Stimpert 1998). They are often managed for as the same species because 
+anglers rarely differentiate between the two species (Mitzner 1991). For 
+this study we evaluated the two species together because under the 
+current regulations there is no difference in length limits or bag 
+limits for Black and White Crappie. 
+
+However, one species is often more abundant than the other in one system 
+(Sammons et al. 2002). Assuming that Catch per Unit Effort in Lake 
+Washington is linearly related to abundance, it indicates that there is 
+more Black Crappie than White Crappie in the system. However, there is 
+data that suggests that there may be a bias for Black Crappie when using 
+trap nets, resulting in more Black Crappie being sampled that white 
+crappie when relying solely on trap style nets for catch data (Sammons 
+et al. 2002). It is also is shown that electrofishing may be more 
+effective in capturing larger fish needed to obtain age and growth data, 
+and that trap nets may be biased to smaller, younger fish (Sammons et 
+al. 2002). 
+
+Electrofishing in the spring could be done to add data, and improve the 
+yield per recruit models. In our study, the mean length and weight was 
+greater for Black Crappie than White Crappie. 
+
+The mean age of White Crappie captured was also lower than the mean age 
+of Black Crappie captured. This could suggest that trap nets are biased 
+to capturing more Black Crappie, and that some electrofishing may also 
+be needed to sample the larger fish in the system. 
+
+Length limits have become increasingly popular ways on managing to meet 
+angler demands of larger fish in the system. In many systems, harvest 
+numbers, not larger sized fish, is of more importance to crappie anglers 
+(Hale et all 1999). Lake Washington may be unique in that some anglers 
+are specially seeking the larger trophy sized fish, yet others are 
+seeking large numbers of fish harvested (N. Aycock, unpublished data). 
+In a study by Hale et al. (1999), a 254 mm length limit was imposed on 
+the Delaware Reservoir to increase size of crappie caught without 
+greatly reducing harvest numbers. The length limit was successful in 
+increasing the mean size of fish caught, but it did dramatically 
+decrease annual yield. However, improvements to fisheries are specific 
+to the study area and are susceptible to fluctuating year class strength 
+(Webb and Ott 1991). 
+
+In this study we noted that in every scenario presented yield would most 
+likely decrease with an increased MLL. However, by increasing the length 
+limit, the mean size of fish harvested would most likely increase. 
+Keeping the “5 under rule” in place would still allow for the 
+harvest of fish below the MLL, allowing anglers to still keep a 254 mm 
+if, if the MLL length limit was increased. 
+
+Miranda and Allen (1995) suggest that reducing exploitation by the use 
+of harvest restrictions does not always improve yield. They found that 
+yield is only likely to increase due to harvest restrictions when growth 
+is fast and natural mortality is low. However, their model does suggest 
+that decreasing annual exploitation, or restricting harvest, can 
+increase the average weight of fish caught, but only when growth is fast 
+and natural mortality is low. According to the models outlined in their 
+paper the population in Lake Washington is a ??? growing population with 
+(high/low natural mortality). Another issue often associated with 
+managing crappie populations is how variable recruitment into crappie 
+populations is. This may affect the estimate of total annual mortality 
+of the population. A catch curve analysis was used to estimate our 
+annual mortality; this method assumes that there is constant recruitment 
+into the population (Allen 1997). Crappie populations have been shown to 
+experience variability in recruitment to age-1 (McDonough and Buchanan 
+1991; Webb and Ott 1991: Mitzner 1995). Our models do not take into 
+account variable annual mortality rates, and yield from year to year 
+will most likely fluctuate with fluctuating recruitment. 
+
+White Crappie are thought to grow faster than Black Crappie due to their 
+piscivorous diet (Ellison 1984). In a 2002 study, Sammons et al. found 
+data that supported this conclusion. They found that by age 4, Black 
+Crappie were on average 30 mm smaller than White Crappie. Variability in 
+size at the same age could affect the age at which one of the species is 
+affected by the MLL. If White Crappie are reaching the MLL before Black 
+Crappie, and are less abundant that Black Crappie in the system, catch 
+rates could be potentially affected. 
+
+* Blacks versus whites and justification for combining, CPUE suggests 
+they are a small component of Crappie stock, But there could be some 
+habitat segregation (any papers documenting different growth? Different 
+mortality rates?) 
+* Effect of increasing MLL ? increased opportunities to harvest 5 under 
+because more fish from 8? 12” versus 8? 10”, Creel indicates 8” 
+over is harvested (N. Aycock Unpublished data) 
+
+
+# Acknowledgments
+
+We thank the Mississippi Department of Wildlife, Fisheries, and Parks 
+for funding; Chad Washington, and Donte Green for leading fish 
+collections and providing data; and Maddy Ruble for help aging otoliths. 
+
+
+
+# Tables
+
+Tables
+Table 1. Model inputs
+Parameter
+Species
+Value
+Units
+Source
+Length-age ()
+ln(a)
+Black Crappie
+-13.74
+unitless
+Estimated
+
+
+White Crappie
+-14.94
+unitless
+Estimated
+b
+Black Crappie
+3.51
+unitless
+Estimated
+
+
+White Crappie
+3.71
+unitless
+Estimated
+Growth ()
+t0
+Both
+-0.85
+yr
+Estimated
+Linf
+Both
+354.54
+mm
+Estimated
+k
+Black Crappie
+0.35
+yr^-1
+Estimated
+
+
+White Crappie
+0.32
+yr^-1
+Estimated
+Sexual maturity
+Length at maturity
+Both
+180
+mm
+Froese and Binohlan 2000
+Mortality and harvest
+M
+Black Crappie
+66%
+yr^-1
+MDWFP
+
+
+White Crappie
+66%
+yr^-1
+MDWFP
+F
+Both
+0.33
+yr^-1
+MDWFP
+Minimum harvest size
+Both
+203.3
+mm
+MDWFP
+Population characteristics
+Species ratio
+Black Crappie
+0.25
+unitless
+Estimated
+
+
+White Crappie
+0.75
+unitless
+Estimated
+Maximum age
+Black Crappie
+act=7 est= 7.72
+
+
+Estimated
+
+
+White Crappie
+act=4 est=8.52
+
+
+Estimated
+Sex ratio
+Both
+0.5
+unitless
+Assumed
+
+
+Figures
+
+```{r,echo=FALSE, message=FALSE, warnings=FALSE}
+figures(1)
 ```
 
-```{r child='_figures-and-tables.Rmd'}
-```     
+Figure 1. Age (x-axis) and length (y-axis; mm) (top panel, Length 
+(x-axis; mm) and Weight (y-axis; g) (middle panel), Length (x-axis; mm) 
+and length (y-axis; mm) (bottom panel) of black and white crappie 
+captured in Lake Washington, Mississippi. 
+
+```{r,echo=FALSE, message=FALSE, warnings=FALSE}
+figures(2)
+```
+
+Figure 2. Yield per 1000 recruits (y-axis) for varying conditional 
+natural mortality rates and exploitation rates. Top panels represent no 
+fishing mortality below the minimum length limit. The middle and bottom 
+rows represent 0.1 and 0.2 respectively. 
+
+
+
+```{r,echo=FALSE, message=FALSE, warnings=FALSE}
+figures(3)
+```
+
+Figure 3. Spawning potential ratio (y-axis) for varying conditional 
+natural mortality rates and exploitation rates. Top panels represent no 
+fishing mortality below the minimum length limit. The middle and bottom 
+rows represent 0.1 and 0.2 respectively. 
+
+
 
 # References
 
-    
+
+

@@ -1,7 +1,7 @@
 figures<- function(n){
 
 if(n==1)
-	{
+	{## FIGURE 1
     par(mfrow=c(3,1))    
     ###################################################################    
     # AGE LENGTH
@@ -38,7 +38,7 @@ if(n==1)
     fit3<-lm(lnW~lnL*Species,
         data=agedat,subset=Weight..g.>0) 
     # CURVE FOR BLACK CRAPPIE LW
-    curve(exp(coef(fit2)[1]+coef(fit2)[2]*log(x)),
+    curve(exp(coef(fit3)[1]+coef(fit3)[2]*log(x)),
         add=TRUE)       
      # CURVE FOR WHITE CRAPPIE LW
     curve(exp(coef(fit3)[1]+
@@ -51,6 +51,7 @@ if(n==1)
     ###################################################################    
     # FECUNDITY
     ###################################################################
+    fit_fecundity<-lm(log(totalEggs)~log(length), egg)   
     plot(totalEggs/1000~length,
         data=egg,pch=19,las=1,
         ylab="Fecundity (x1000)",
@@ -59,7 +60,7 @@ if(n==1)
         log(x)*coef(fit_fecundity)[2])/1000,add=TRUE)        
     }
 if(n==2)
-    {
+    {## FIGURE 2
     #######################################################################
     # YPR 
     #######################################################################

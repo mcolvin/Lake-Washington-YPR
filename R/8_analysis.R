@@ -1,5 +1,7 @@
 #######################################################################
+#
 # NOTES
+#
 #######################################################################
 
 # WEIGHTS WERE ONLY TAKEN ON AGED FISH
@@ -33,7 +35,7 @@ AIC(fit1);AIC(fit2);AIC(fit3)
 # STRONG EVIDENCE FOR DIFFERENCE AMONG BLACK AND WHITE CRAPPIE  
 
 ## BLACK,WHITE
-a<-c(exp(coef(fit3)[1]),exp(coef(fit3)[1]+coef(fit3)[3]))
+a<-c((coef(fit3)[1]),(coef(fit3)[1]+coef(fit3)[3]))
 b<-c(coef(fit3)[2],coef(fit3)[2]+coef(fit3)[4])
  
 
@@ -42,26 +44,51 @@ b<-c(coef(fit3)[2],coef(fit3)[2]+coef(fit3)[4])
 #######################################################################
 ## CHI METHOD
 
-## BIN AGED LENGTHS INTO INCHES
-bins<-seq(0,400,by=25.4)
-binlab<- paste(bins[-length(bins)],bins[-1],sep="-")
-agedat$l_bin<-cut(agedat$Length..mm.,bins,binlab)
-dat$l_bin<- cut(dat$Length,bins,binlab)
+agedat<-subset(agedat,weight>0)
 
 
-top<-table(dat[dat$Spp..Code==1409,]$l_bin)/nrow(dat[dat$Spp..Code==1409,])
-bot<-table(agedat[agedat$Species=="wc",]$l_bin)/nrow(agedat[agedat$Species=="wc",])
-rw<- data.frame(l_bin=levels(dat$l_bin),rw= as.numeric(top/bot))
+
+## CATCH DATA
+catch<-  dat[,c(17,18)]
+names(catch)<- c("spp","len")
+names(agedat)[c(1,3)]<- c("spp","len")
+catch<-rbind(catch,agedat[,c(1,3)])
+catch[catch$spp==1410,]$spp<-'wc'
+catch[catch$spp==1409,]$spp<-'bc'
+
+
+## AGING DATA
+
+## BIN AGED LENGTHS INTO CM GROUPS
+catch$l_bin<- floor(catch$len/10)
+agedat$l_bin<-floor(agedat$len/10)
+
+## NEED TO ADD LENGTHS FOR AGED FISH TO CATCH...
+
+## WEIGHTS FOR WHITE CRAPPIE
+top<-table(catch[catch$spp=="wc"& catch$l_bin>=10,]$l_bin)/
+    nrow(catch[catch$spp=="wc",])
+bot<-table(agedat[agedat$spp=="wc",]$l_bin)/
+    nrow(agedat[agedat$spp=="wc",])
+pp<-
+rw<- data.frame(
+    Species="wc",
+    l_bin=levels(dat$l_bin),
+    rw= as.numeric(top/bot))
+top<-table(dat[dat$Spp..Code==1410,]$l_bin)/nrow(dat[dat$Spp..Code==1410,])
+bot<-table(agedat[agedat$Species=="bc",]$l_bin)/nrow(agedat[agedat$Species=="bc",])
+rw<- data.frame(
+    Species="bc",
+    l_bin=levels(dat$l_bin),
+    rw= as.numeric(top/bot))   
+
+
+   
 rw$rw<- ifelse(is.na(rw$rw),1, rw$rw)
-agedat_wc<-subset(agedat,Species=="wc")
-agedat_wc<- merge(agedat_wc, rw, by=c("l_bin"),all.x=TRUE)
-    
-top<-table(dat[dat$Spp..Code%in%c(1409,1410),]$l_bin)/nrow(dat[dat$Spp..Code%in%c(1409,1410),])
-bot<-table(agedat$l_bin)/nrow(agedat)
-rw<- data.frame(l_bin=levels(dat$l_bin),rw= as.numeric(top/bot))
-rw$rw<- ifelse(is.na(rw$rw),1, rw$rw)
-agedat<- merge(agedat, rw, by=c("l_bin"),all.x=TRUE)    
-    
+
+agedat<- merge(agedat, rw, by=c("Species","l_bin"),all.x=TRUE)
+   
+
 
     
 vbgf_fit  <- nls(Length..mm.~ Linf * (1- exp(-k*(Age-t0))),
@@ -72,6 +99,58 @@ vbgf_fit  <- nls(Length..mm.~ Linf * (1- exp(-k*(Age-t0))),
     weights= agedat$rw,
     control=list(maxiter=3000))	
 
+#######################################################################
+#
+#  FIT VBGF FOR EACH SPECIES
+#
+#######################################################################
+mm <- model.matrix(~ 0 + Species, agedat)
+m0  <- nls(Length..mm.~ Linf* (1- exp(-k*(Age-t0))),
+    agedat,start=list(
+        Linf=305, 
+        k=0.2, 
+        t0=0.0),
+    weights= agedat$rw,
+    control=list(maxiter=3000))	   
+m1  <- nls(Length..mm.~ drop(mm %*% c(LinfBC,LinfWC)) * (1- exp(-k*(Age-t0))),
+    agedat,start=list(
+        LinfBC=305, 
+        LinfWC=305, 
+        k=0.2, 
+        t0=0.0),
+    weights= agedat$rw,
+    control=list(maxiter=3000))	   
+
+m2  <- nls(Length..mm.~ Linf * (1- exp(-drop(mm %*% c(kBC,kWC))*(Age-t0))),
+    agedat,start=list(
+        Linf=305, 
+        kBC=0.2, 
+        kWC=0.2, 
+        t0=0.0),
+    weights= agedat$rw,
+    control=list(maxiter=3000))	     
+
+m3  <- nls(Length..mm.~ drop(mm %*% c(LinfBC,LinfWC)) * (1- exp(-drop(mm %*% c(kBC,kWC))*(Age-t0))),
+    agedat,start=list(
+        LinfBC=305, 
+        LinfWC=305, 
+        kBC=0.2, 
+        kWC=0.2, 
+        t0=0.0),
+    weights= agedat$rw,
+    control=list(maxiter=3000))	     
+   
+AIC(m0);AIC(m1);AIC(m2);AIC(m3)   
+
+#######################################################################
+#
+#  MAXIMUM AGE
+#
+#######################################################################
+
+lambda<- aggregate(Age~Species,agedat,max)
+
+    
 #######################################################################
 # LENGTH-FECUNDITY
 #######################################################################
